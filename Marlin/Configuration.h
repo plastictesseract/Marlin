@@ -336,9 +336,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   // FolgerTech i3-2020
-  #define  DEFAULT_Kp 11.50
-  #define  DEFAULT_Ki 0.50
-  #define  DEFAULT_Kd 60.00
+  #define  DEFAULT_Kp 24.16
+  #define  DEFAULT_Ki 1.37
+  #define  DEFAULT_Kd 106.87
   
   // Ultimaker
   //#define  DEFAULT_Kp 22.2
@@ -369,7 +369,7 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -383,11 +383,16 @@
 
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
+  // EHS FolgerTech 2020 i3 glass directly on PCB
+  #define  DEFAULT_bedKp 266.45
+  #define  DEFAULT_bedKi 19.48
+  #define  DEFAULT_bedKd 911.33
+  
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define  DEFAULT_bedKp 10.00
-  #define  DEFAULT_bedKi .023
-  #define  DEFAULT_bedKd 305.4
+  //#define  DEFAULT_bedKp 10.00
+  //#define  DEFAULT_bedKi .023
+  //#define  DEFAULT_bedKd 305.4
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -514,7 +519,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 83.3, 82.5, 4000, 99.8 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 83.3, 82.5, 4000, 97.8 }
 
 /**
  * Default Max Feed Rate (mm/s)
